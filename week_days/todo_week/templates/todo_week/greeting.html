@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Приложение "Список дел"{% endblock %}
+
+{% block greeting %}Добро пожаловать в приложение «Список дел»{% endblock %}
+
+{% block description1 %} Здесь будут показаны все ваши дела на ближайшую неделю {% endblock %}
+
+{% block description2 %}
+<ul>
+    {% for day in days_of_week_list %}
+        <li><a href={% url "name_of_day_url" day %}>{{ day }}</a></li>
+    {% endfor %}
+</ul>   
+{% endblock %}
+
+<footer>FOOTER</footer>
+    
