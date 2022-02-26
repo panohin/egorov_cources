@@ -1,0 +1,7 @@
+<nav>
+    <a href={% url 'horoscope_index'%}>Main</a> |
+    <a href="https://www.homeenglish.ru/OtherGoroscop.htm">Source</a>
+    {% for sign in zodiac_dates_dict %}
+       | <a href={% url 'horoscope_URL' zodiac_sign=sign %}>{{ sign|title }}</a>
+    {% endfor %}
+</nav>

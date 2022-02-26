@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+
+
+{% block css_additional %}
+<link rel="stylesheet" href="{% static 'horoscope/css/index.css'%}">
+{% endblock %}
+
+{% block title %} 
+    МЕНЮ
+{% endblock %}
+
+{% block content %}
+{% include 'horoscope/includes/navbar.html' %}
+    <h1>Приложение Гороскоп</h1>
+    <ul>
+        {% for sign in zodiac_dates_dict %}
+        <li><a href={% url 'horoscope_URL' zodiac_sign=sign %}>{{ sign|title }}</a></li>
+        {% endfor %}
+    </ul>  
+{% endblock %}
+
